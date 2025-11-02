@@ -108,8 +108,6 @@ namespace PizzaConsole_7
             List<string> lines = new List<string>();
             lines = File.ReadAllLines(path).ToList();
 
-            pizzas.Clear();
-
             foreach (string line in lines)
             {
                 if(PizzaClass.TryParse(line, out PizzaClass? pizza))
@@ -164,8 +162,7 @@ namespace PizzaConsole_7
                 string json = File.ReadAllText(path);
                 List<PizzaClass>? _pizzas = JsonSerializer.Deserialize<List<PizzaClass>>(json);
                 
-                if(_pizzas != null) pizzas = _pizzas.ToList();
-                else pizzas = new List<PizzaClass>();
+                if(_pizzas != null) pizzas.AddRange(_pizzas.ToList());
 
                 return $"Was successfully load from {path}";
             }

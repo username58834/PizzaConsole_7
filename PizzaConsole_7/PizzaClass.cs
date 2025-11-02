@@ -4,6 +4,7 @@ using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
@@ -106,6 +107,8 @@ namespace PizzaConsole_7
         {
             return $"{Name}, {Price.ToString("F2")}, {Weight.ToString("F3")}";
         }
+
+        [JsonPropertyName("Pizzas Name")]
         public string Name
         {
             get
@@ -122,6 +125,7 @@ namespace PizzaConsole_7
             }
         }
 
+        [JsonPropertyName("Pizzas Price")]
         public float Price
         {
             get
@@ -138,6 +142,7 @@ namespace PizzaConsole_7
             }
         }
 
+        [JsonPropertyName("Pizzas Weight")]
         public double Weight
         {
             get
