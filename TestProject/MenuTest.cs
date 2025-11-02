@@ -148,6 +148,7 @@ namespace TestProject
             }
 
             Program.SaveToScv("MenuTest");
+            Program.pizzas.Clear();
             Program.LoadFromScv("MenuTest");
 
             string actual = "";
@@ -180,6 +181,7 @@ namespace TestProject
             }
 
             Program.SaveToJson("MenuTest");
+            Program.pizzas.Clear();
             Program.LoadFromJson("MenuTest");
 
             string actual = "";

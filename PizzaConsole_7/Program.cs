@@ -182,7 +182,7 @@ namespace PizzaConsole_7
             switch (command)
             {
                 case 1:
-                    return LoadFromScv(path+".scv");
+                    return LoadFromScv(path+".csv");
                 case 2:
                     return LoadFromJson(path+".json");
                 default:
